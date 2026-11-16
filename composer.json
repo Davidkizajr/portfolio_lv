@@ -14,7 +14,9 @@
         "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0",
         "owenvoke/blade-fontawesome": "^3.3",
-        "secondnetwork/blade-tabler-icons": "^3.48"
+        "secondnetwork/blade-tabler-icons": "^3.48",
+        "symfony/brevo-mailer": "^8.1",
+        "symfony/http-client": "^8.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
