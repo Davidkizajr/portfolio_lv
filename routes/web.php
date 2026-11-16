@@ -4,6 +4,7 @@ use App\Http\Controllers\MailController;
 use App\Mail\MyTestEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 Route::get("/", function () {
     return view("layouts.main");
@@ -26,3 +27,7 @@ Route::post("/send-mail", [MailController::class, "sendMail"])->name(
 Route::get("/contactsuccess", function () {
     return view("layouts.contactsuccess");
 })->name("contactsuccess");
+
+if (env("APP_ENV") === "production") {
+    URL::forceSchema("https");
+}
