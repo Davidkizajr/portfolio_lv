@@ -1,11 +1,12 @@
 # syntax=docker/dockerfile:1
 
 # ---------- Stage 1: build frontend assets ----------
-FROM node:20-alpine AS assets
+FROM node:26-alpine AS assets
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
-COPY . .
+COPY resources ./resources
+COPY vite.config.js ./
 RUN npm run build
 
 # ---------- Stage 2: PHP application ----------
